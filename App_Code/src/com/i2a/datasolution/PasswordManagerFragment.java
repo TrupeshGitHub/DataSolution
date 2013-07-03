@@ -10,37 +10,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.i2a.adapter.PasswordManagerListAdapter;
 import com.i2a.adapter.SectionsPagerAdapter;
-import com.i2a.adapter.VisitingCardListAdapter;
 
-public class VisitingCardFragment extends Fragment{
+public class PasswordManagerFragment extends Fragment {
+
+	private ArrayList<String> mAccNames = new ArrayList<String>();
+	private String LOG_TAG = "PasswordManagerFragment";
+	private PasswordManagerListAdapter mListAdapter = null;
+	private SectionsPagerAdapter mSectionsAdapter = null;
 	
-	private String LOG_TAG = "VisitingCardFragment";
-	
-	private ArrayList<String> mOrgNames = new ArrayList<String>();
-	private VisitingCardListAdapter mListAdapter = null;
-	private SectionsPagerAdapter mSectionsAdapter = null; 
-	
-	public ArrayList<String> getOrgNames() {
-		return mOrgNames;
+	public ArrayList<String> getAccNames() {
+		return mAccNames;
 	}
 
-	public void setOrgNames(ArrayList<String> orgNames) {
-		this.mOrgNames = orgNames;
+	public void setAccNames(ArrayList<String> accNames) {
+		this.mAccNames = accNames;
 	}
 
-	public VisitingCardListAdapter getmListAdapter() {
+	public PasswordManagerListAdapter getListAdapter() {
 		return mListAdapter;
 	}
 
-	public void setListAdapter(VisitingCardListAdapter listAdapter) {
+	public void setListAdapter(PasswordManagerListAdapter listAdapter) {
 		this.mListAdapter = listAdapter;
 	}
 
 	public SectionsPagerAdapter getSectionsAdapter() {
 		return mSectionsAdapter;
 	}
-	
+
 	public void setSectionsAdapter(SectionsPagerAdapter sectionsAdapter) {
 		this.mSectionsAdapter = sectionsAdapter;
 	}
@@ -61,14 +60,13 @@ public class VisitingCardFragment extends Fragment{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.d(LOG_TAG, "---onCreate---");
-		mListAdapter = new VisitingCardListAdapter(getActivity().getApplicationContext());
+		mListAdapter = new PasswordManagerListAdapter(getActivity().getApplicationContext());
 		
-		mOrgNames.add("AgreeYa Mobility");
-		mOrgNames.add("Magic Softwares");
-		mOrgNames.add("Samsung Telecommunications America");
+		mAccNames.add("trupesh44@yahoo.co.in");
+		mAccNames.add("trupesh44@gmail.com");
+		mAccNames.add("AXIS BANK Account");
 		
-		mListAdapter.setContent(mOrgNames);
+		mListAdapter.setContent(mAccNames);
 		super.onCreate(savedInstanceState);
 	}
-	
 }

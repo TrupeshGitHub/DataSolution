@@ -1,4 +1,4 @@
-package com.i2a.datasolution;
+package com.i2a.utils;
 
 public class Constants {
 	

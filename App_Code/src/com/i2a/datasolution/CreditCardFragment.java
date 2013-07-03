@@ -10,37 +10,36 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ListView;
 
+import com.i2a.adapter.CreditCardListAdapter;
 import com.i2a.adapter.SectionsPagerAdapter;
-import com.i2a.adapter.VisitingCardListAdapter;
 
-public class VisitingCardFragment extends Fragment{
+public class CreditCardFragment extends Fragment{
+
+	private ArrayList<String> mCardNames = new ArrayList<String>();
+	private String LOG_TAG = "CreditCardFragment";
+	private CreditCardListAdapter mListAdapter = null;
+	private SectionsPagerAdapter mSectionsAdapter = null;
 	
-	private String LOG_TAG = "VisitingCardFragment";
-	
-	private ArrayList<String> mOrgNames = new ArrayList<String>();
-	private VisitingCardListAdapter mListAdapter = null;
-	private SectionsPagerAdapter mSectionsAdapter = null; 
-	
-	public ArrayList<String> getOrgNames() {
-		return mOrgNames;
+	public ArrayList<String> getCardNames() {
+		return mCardNames;
 	}
 
-	public void setOrgNames(ArrayList<String> orgNames) {
-		this.mOrgNames = orgNames;
+	public void setCardNames(ArrayList<String> cardNames) {
+		this.mCardNames = cardNames;
 	}
 
-	public VisitingCardListAdapter getmListAdapter() {
+	public CreditCardListAdapter getListAdapter() {
 		return mListAdapter;
 	}
 
-	public void setListAdapter(VisitingCardListAdapter listAdapter) {
+	public void setListAdapter(CreditCardListAdapter listAdapter) {
 		this.mListAdapter = listAdapter;
 	}
 
-	public SectionsPagerAdapter getSectionsAdapter() {
+	public SectionsPagerAdapter getmSectionsAdapter() {
 		return mSectionsAdapter;
 	}
-	
+
 	public void setSectionsAdapter(SectionsPagerAdapter sectionsAdapter) {
 		this.mSectionsAdapter = sectionsAdapter;
 	}
@@ -61,14 +60,14 @@ public class VisitingCardFragment extends Fragment{
 	@Override
 	public void onCreate(Bundle savedInstanceState) {
 		Log.d(LOG_TAG, "---onCreate---");
-		mListAdapter = new VisitingCardListAdapter(getActivity().getApplicationContext());
+		mListAdapter = new CreditCardListAdapter(getActivity().getApplicationContext());
 		
-		mOrgNames.add("AgreeYa Mobility");
-		mOrgNames.add("Magic Softwares");
-		mOrgNames.add("Samsung Telecommunications America");
+		mCardNames.add("HDFC Credit Card");
+		mCardNames.add("AXIS BANK Debit Card");
+		mCardNames.add("AXIS BANK Credit Card");
+		mCardNames.add("ICICI Debit Card");
 		
-		mListAdapter.setContent(mOrgNames);
+		mListAdapter.setContent(mCardNames);
 		super.onCreate(savedInstanceState);
 	}
-	
 }
