@@ -65,7 +65,7 @@ public class CreditCardFragment extends Fragment{
 		mCardNames.add("HDFC Credit Card");
 		mCardNames.add("AXIS BANK Debit Card");
 		mCardNames.add("AXIS BANK Credit Card");
-		mCardNames.add("ICICI Debit Card");
+		mCardNames.add("IDBI Debit Card");
 		
 		mListAdapter.setContent(mCardNames);
 		super.onCreate(savedInstanceState);
