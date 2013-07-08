@@ -15,6 +15,7 @@ public class InitiateDB extends SQLiteOpenHelper{
 	public InitiateDB(Context context) {
 		super(context, DATABASE_NAME, null, DATABASE_VERSION);
 		Log.d(TAG, "initiating constructor");
+		dbUtilities = new DBUtilities();
 	}
 	
 	static
@@ -22,12 +23,9 @@ public class InitiateDB extends SQLiteOpenHelper{
 		Log.d(TAG, "initiate the Database");
 		
 	}
-	public void createDatabase(){
-
-	}
 	@Override
 	public void onCreate(SQLiteDatabase db) {
-		Log.d(TAG, "initiating oncreate");
+		Log.d(TAG, "oncreate database : "+db);
 		 db.execSQL(dbUtilities.createContactTable());
 		 db.execSQL(dbUtilities.createAddressTable());
 		 db.execSQL(dbUtilities.createContactNumbersTable());

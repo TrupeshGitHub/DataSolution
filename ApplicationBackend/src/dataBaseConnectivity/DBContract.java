@@ -24,7 +24,7 @@ public final class DBContract {
 		public static final String COLUMN_NAME_LAST_NAME = "city";
 		public static final String COLUMN_NAME_COMPANY = "state";
 		public static final String COLUMN_NAME_WORK_EMAIL = "country";
-		public static final String COLUMN_NAME_PERSONAL_EMAIL = "postalode";
+		public static final String COLUMN_NAME_PERSONAL_EMAIL = "personal email";
 		public static final String COLUMN_NAME_WEBSITE = "postalode";
 	}
 	/* Inner class that defines the table contents of Address table*/
@@ -36,7 +36,7 @@ public final class DBContract {
 		public static final String COLUMN_NAME_CITY = "city";
 		public static final String COLUMN_NAME_STATE = "state";
 		public static final String COLUMN_NAME_COUNTRY = "country";
-		public static final String COLUMN_NAME_POSTALCODE = "postalode";
+		public static final String COLUMN_NAME_POSTALCODE = "postalcode";
 	}
 	/* Inner class that defines the table contents of Address table*/
 	public static abstract class ContactNumbersTable implements BaseColumns {

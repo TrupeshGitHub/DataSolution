@@ -13,12 +13,11 @@ public class MainActivity extends Activity {
 	protected void onCreate(Bundle savedInstanceState) {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
-		Log.d(TAG, "in onCreate");
+		Log.d(TAG, "in onCreate ");
 		//time to form the make the db and initiate the tables
 		//initiate the DB request 
 		InitiateDB mDbHelper = new InitiateDB(getApplicationContext());
-		Log.d(TAG, "after creating object");
-//		SQLiteDatabase db = mDbHelper.getWritableDatabase();
+		SQLiteDatabase writableDatabase = mDbHelper.getWritableDatabase();
 	}
 
 	@Override

@@ -27,7 +27,7 @@ public class DBUtilities {
 				ContactTable.COLUMN_NAME_COMPANY + TEXT_TYPE + COMMA_SEP +
 				ContactTable.COLUMN_NAME_WORK_EMAIL + TEXT_TYPE + COMMA_SEP +
 				ContactTable.COLUMN_NAME_PERSONAL_EMAIL + TEXT_TYPE + COMMA_SEP +
-				ContactTable.COLUMN_NAME_WEBSITE + TEXT_TYPE + COMMA_SEP +
+				ContactTable.COLUMN_NAME_WEBSITE + TEXT_TYPE +
 				" )";
 		return SQL_CREATE_ENTRIES;
 
@@ -40,7 +40,7 @@ public class DBUtilities {
 				AddressTable.COLUMN_NAME_CITY + TEXT_TYPE + COMMA_SEP +
 				AddressTable.COLUMN_NAME_STATE + TEXT_TYPE + COMMA_SEP +
 				AddressTable.COLUMN_NAME_COUNTRY + TEXT_TYPE + COMMA_SEP +
-				AddressTable.COLUMN_NAME_POSTALCODE + TEXT_TYPE + COMMA_SEP +
+				AddressTable.COLUMN_NAME_POSTALCODE + TEXT_TYPE + 
 				" )";
 		return SQL_CREATE_ENTRIES;
 	}
@@ -51,7 +51,7 @@ public class DBUtilities {
 				ContactNumbersTable.COLUMN_NAME_MOBILE_NUMBER + TEXT_TYPE + COMMA_SEP +
 				ContactNumbersTable.COLUMN_NAME_FAX_NUMBER + TEXT_TYPE + COMMA_SEP +
 				ContactNumbersTable.COLUMN_NAME_PAGER_NUMBER + TEXT_TYPE + COMMA_SEP +
-				ContactNumbersTable.COLUMN_NAME_OTHER_NUMBER + TEXT_TYPE + COMMA_SEP +
+				ContactNumbersTable.COLUMN_NAME_OTHER_NUMBER + TEXT_TYPE + 
 				" )";
 		return SQL_CREATE_ENTRIES;
 	}
