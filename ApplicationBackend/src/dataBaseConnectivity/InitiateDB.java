@@ -17,23 +17,24 @@ public class InitiateDB extends SQLiteOpenHelper{
 		Log.d(TAG, "initiating constructor");
 		dbUtilities = new DBUtilities();
 	}
+
 	
 	static
 	{
 		Log.d(TAG, "initiate the Database");
-		
+
 	}
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		Log.d(TAG, "oncreate database : "+db);
-		 db.execSQL(dbUtilities.createContactTable());
-		 db.execSQL(dbUtilities.createAddressTable());
-		 db.execSQL(dbUtilities.createContactNumbersTable());
-
+		db.execSQL(dbUtilities.createContactTable());
+		db.execSQL(dbUtilities.createAddressTable());
+		db.execSQL(dbUtilities.createContactNumbersTable());
 	}
 	@Override
 	public void onUpgrade(SQLiteDatabase db, int oldVersion, int newVersion) {
 		onCreate(db);
 	}
+
 	
 }

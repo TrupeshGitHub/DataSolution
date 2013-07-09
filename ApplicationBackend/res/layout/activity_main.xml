@@ -11,6 +11,31 @@
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:id="@+id/appTV"
         android:text="@string/hello_world" />
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/addContactButton"
+        android:layout_below="@+id/appTV"
+        android:text="Add Contact"
+        />
 
+        <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/addAddress"
+        android:layout_below="@+id/addContactButton"
+        android:text="Add Address"
+        />
+    <Button 
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:clickable="true"
+        android:id="@+id/addNumbers"
+        android:layout_below="@+id/addAddress"
+        android:text="Add number"
+        />
 </RelativeLayout>

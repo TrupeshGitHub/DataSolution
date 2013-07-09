@@ -10,6 +10,7 @@ import android.provider.BaseColumns;
  */
 public final class DBContract {
 	public static String TAG= "DBContract";
+
 	
 	// To prevent someone from accidentally instantiating the contract class,
 	public DBContract(){
@@ -19,13 +20,13 @@ public final class DBContract {
 	public static abstract class ContactTable implements BaseColumns {
 		public static final String TABLE_NAME = "contact";
 		public static final String COLUMN_NAME_CONTACT_ID = "cID";               //Primary Key
-		public static final String COLUMN_NAME_FIRST_NAME = "streetLine1";
-		public static final String COLUMN_NAME_MIDDLE_NAME = "streetLine2";
-		public static final String COLUMN_NAME_LAST_NAME = "city";
-		public static final String COLUMN_NAME_COMPANY = "state";
-		public static final String COLUMN_NAME_WORK_EMAIL = "country";
-		public static final String COLUMN_NAME_PERSONAL_EMAIL = "personal email";
-		public static final String COLUMN_NAME_WEBSITE = "postalode";
+		public static final String COLUMN_NAME_FIRST_NAME = "firstname";
+		public static final String COLUMN_NAME_MIDDLE_NAME = "secondname";
+		public static final String COLUMN_NAME_LAST_NAME = "lastname";
+		public static final String COLUMN_NAME_COMPANY = "company";
+		public static final String COLUMN_NAME_WORK_EMAIL = "workemail";
+		public static final String COLUMN_NAME_PERSONAL_EMAIL = "personalemail";
+		public static final String COLUMN_NAME_WEBSITE = "companywebsite";
 	}
 	/* Inner class that defines the table contents of Address table*/
 	public static abstract class AddressTable implements BaseColumns {
