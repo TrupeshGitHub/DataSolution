@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical" >
+
+    <LinearLayout 
+        android:id="@+id/nameLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/darker_gray"
+         >
+
+        <EditText
+            android:id="@+id/firstName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="First"
+            android:cursorVisible="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/middleName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Middle"
+            android:cursorVisible="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/lastName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:text="Last"
+            android:cursorVisible="false"
+            android:clickable="false"
+            android:focusable="false"
+            android:inputType="textPersonName" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical" >
+
+        <TextView
+            android:id="@+id/firmName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="@string/company_name"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/companyName"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:hint="@string/company_name" />
+
+        <LinearLayout
+            android:id="@+id/phoneNumberLayout"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <Spinner
+                android:id="@+id/chooseNumberType"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:entries="@array/phone_numbers" />
+
+            <EditText
+                android:id="@+id/phoneNumber"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/phone_number"
+                android:inputType="phone" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/address"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:text="@string/address"
+            android:textStyle="bold" />
+
+        <LinearLayout
+            android:id="@+id/address1"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <EditText
+                android:id="@+id/streetLine1"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/street_line_1" />
+
+            <EditText
+                android:id="@+id/streetLine2"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/street_line_2" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/address2"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="3" >
+
+            <EditText
+                android:id="@+id/city"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/city"
+                android:inputType="text|number" />
+
+            <EditText
+                android:id="@+id/state"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/state"
+                android:inputType="text" />
+
+            <EditText
+                android:id="@+id/postalCode"
+                android:layout_width="fill_parent"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:hint="@string/postal_code"
+                android:inputType="number" />
+        </LinearLayout>
+
+        <EditText
+            android:id="@+id/country"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/country"
+            android:inputType="text" />
+
+        <ImageButton
+            android:id="@+id/navigateToContact"
+            android:layout_width="35dip"
+            android:layout_height="35dip"
+            android:text="@string/navigateToContact" 
+            android:layout_marginLeft="15dip"
+            android:background="@drawable/navigation"/>
+
+        <TextView
+            android:id="@+id/email"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:clickable="false"
+            android:hint="@string/email"
+            android:textStyle="bold" />
+
+        <EditText
+            android:id="@+id/workEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/work_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/personalEmail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/personal_email"
+            android:inputType="textEmailAddress" />
+
+        <EditText
+            android:id="@+id/website"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="@string/website" />
+
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:weightSum="2" >
+
+            <Button
+                android:id="@+id/Done"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Done" />
+
+            <Button
+                android:id="@+id/Cancel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Cancel" />
+        </LinearLayout>
+    </LinearLayout>
+
+</LinearLayout>
