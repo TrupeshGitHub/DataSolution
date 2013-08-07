@@ -8,26 +8,6 @@ package contactInformation;
  */
 public class CardHolder {
 
-	public CardHolder(int cId, String firstName, String middleName,
-			String lastName, String companyName, Address companyAddress,
-			ContactNumber contactNumber, String workEmail,
-			String personalEmail, String website) {
-		super();
-		CId = cId;
-		this.firstName = firstName;
-		this.middleName = middleName;
-		this.lastName = lastName;
-		CompanyName = companyName;
-		CompanyAddress = companyAddress;
-		this.contactNumber = contactNumber;
-		this.workEmail = workEmail;
-		this.personalEmail = personalEmail;
-		this.website = website;
-	}
-	/**
-	 * Customer Id : Primary key
-	 */
-	private int CId;
 	/**
 	 * First name of the contact 
 	 */
@@ -43,7 +23,7 @@ public class CardHolder {
 	/**
 	 * Name of the company, the contact works with 
 	 */
-	private String CompanyName;
+	private String firmName;
 	/**
 	 * Name of the company, the contact works with 
 	 */
@@ -51,7 +31,7 @@ public class CardHolder {
 	/**
 	 * Name of the company, the contact works with 
 	 */
-	private ContactNumber contactNumber;
+	private PhoneNumber contactNumber;
 	/**
 	 * official email address of the contact 
 	 */
@@ -97,21 +77,15 @@ public class CardHolder {
 		this.personalEmail = personalEmail;
 	}
 	public String getCompanyName() {
-		return CompanyName;
+		return firmName;
 	}
 	public void setCompanyName(String companyName) {
-		CompanyName = companyName;
+		firmName = companyName;
 	}
-	public void setCId(int cId) {
-		CId = cId;
-	}
-	public int getCId() {
-		return CId;
-	}
-	public void setContactNumber(ContactNumber contactNumber) {
+	public void setContactNumber(PhoneNumber contactNumber) {
 		this.contactNumber = contactNumber;
 	}
-	public ContactNumber getContactNumber() {
+	public PhoneNumber getContactNumber() {
 		return contactNumber;
 	}
 	public void setCompanyAddress(Address companyAddress) {

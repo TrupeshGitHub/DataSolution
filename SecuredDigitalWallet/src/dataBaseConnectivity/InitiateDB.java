@@ -16,11 +16,6 @@ public class InitiateDB extends SQLiteOpenHelper{
 		Log.d(TAG, "initiating constructor");
 	}
 
-	static
-	{
-		Log.d(TAG, "initiate the Database");
-
-	}
 	@Override
 	public void onCreate(SQLiteDatabase db) {
 		Log.d(TAG, "oncreate database : "+db);

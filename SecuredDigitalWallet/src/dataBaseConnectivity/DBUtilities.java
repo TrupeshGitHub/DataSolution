@@ -20,55 +20,6 @@ public class DBUtilities {
 	private static final String TEXT_TYPE = " TEXT";
 	private static final String COMMA_SEP = ",";
 
-//	/**
-//	 * 
-//	 * @return query to create the table for storing the contacts
-//	 */
-//	public String createContactTable(){
-//		SQL_CREATE_ENTRIES="CREATE TABLE " + ContactTable.TABLE_NAME + " (" +
-//		ContactTable.COLUMN_NAME_CONTACT_ID + " INTEGER PRIMARY KEY," +
-//		ContactTable.COLUMN_NAME_FIRST_NAME + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_MIDDLE_NAME + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_LAST_NAME + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_COMPANY + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_WORK_EMAIL + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_PERSONAL_EMAIL + TEXT_TYPE + COMMA_SEP +
-//		ContactTable.COLUMN_NAME_WEBSITE + TEXT_TYPE +
-//		" )";
-//		return SQL_CREATE_ENTRIES;
-//
-//	}
-//	/**
-//	 * 
-//	 * @return : query to create the table for storing the addresses of the contact
-//	 */
-//	public String createAddressTable(){
-//		SQL_CREATE_ENTRIES="CREATE TABLE " + AddressTable.TABLE_NAME + " (" +
-//		AddressTable.COLUMN_NAME_CONTACT_ID + " INTEGER PRIMARY KEY," +
-//		AddressTable.COLUMN_NAME_STREET_LINE_1 + TEXT_TYPE + COMMA_SEP +
-//		AddressTable.COLUMN_NAME_STREET_LINE_2 + TEXT_TYPE + COMMA_SEP +
-//		AddressTable.COLUMN_NAME_CITY + TEXT_TYPE + COMMA_SEP +
-//		AddressTable.COLUMN_NAME_STATE + TEXT_TYPE + COMMA_SEP +
-//		AddressTable.COLUMN_NAME_COUNTRY + TEXT_TYPE + COMMA_SEP +
-//		AddressTable.COLUMN_NAME_POSTALCODE + TEXT_TYPE + 
-//		" )";
-//		return SQL_CREATE_ENTRIES;
-//	}
-//	/**
-//	 * 
-//	 * @return : query to create the table for storing the contact numbers of the contact 
-//	 */
-//	public String createContactNumbersTable(){
-//		SQL_CREATE_ENTRIES="CREATE TABLE " + ContactNumbersTable.TABLE_NAME + " (" +
-//		ContactNumbersTable.COLUMN_NAME_CONTACT_ID + " INTEGER PRIMARY KEY," +
-//		ContactNumbersTable.COLUMN_NAME_OFFICE_NUMBER + TEXT_TYPE + COMMA_SEP +
-//		ContactNumbersTable.COLUMN_NAME_MOBILE_NUMBER + TEXT_TYPE + COMMA_SEP +
-//		ContactNumbersTable.COLUMN_NAME_FAX_NUMBER + TEXT_TYPE + COMMA_SEP +
-//		ContactNumbersTable.COLUMN_NAME_PAGER_NUMBER + TEXT_TYPE + COMMA_SEP +
-//		ContactNumbersTable.COLUMN_NAME_OTHER_NUMBER + TEXT_TYPE + 
-//		" )";
-//		return SQL_CREATE_ENTRIES;
-//	}
 	/**
 	 * 
 	 * @param tableName   : Table name in which the row should be inserted
@@ -115,31 +66,32 @@ public class DBUtilities {
 	public static final String contactTableSQL = "CREATE TABLE "
 			+ ContactsColumns.TABLE_NAME + " ( " + ContactsColumns.CONTACT_ID
 			+ INTEGER + PRIMARY_KEY_CONSTRAINT + COMMA_SEP
-			+ ContactsColumns.FIRST_NAME + TEXT + NOTNULL_CONSTRAINT
-			+ COMMA_SEP + ContactsColumns.LAST_NAME + TEXT + COMMA_SEP
-			+ ContactsColumns.CORPORATE_EMAIL + TEXT + UNIQUE_CONSTRAINT
-			+ COMMA_SEP + ContactsColumns.SECONDARY_EMAIL + TEXT + COMMA_SEP
+			+ ContactsColumns.FIRST_NAME + TEXT + NOTNULL_CONSTRAINT + COMMA_SEP 
+			+ ContactsColumns.LAST_NAME + TEXT + COMMA_SEP
+			+ ContactsColumns.FIRM_NAME + TEXT + COMMA_SEP
+			+ ContactsColumns.CORPORATE_EMAIL + TEXT + UNIQUE_CONSTRAINT + COMMA_SEP 
+			+ ContactsColumns.SECONDARY_EMAIL + TEXT + COMMA_SEP
 			+ ContactsColumns.COMPANY_NAME + TEXT + COMMA_SEP
 			+ ContactsColumns.WEBSITE_URL + TEXT + " )";
 
 	public static final String addressTableSQL = "CREATE TABLE "
 			+ AddressColumns.TABLE_NAME + " ( " + AddressColumns.ADDRESS_ID
 			+ INTEGER + PRIMARY_KEY_CONSTRAINT + COMMA_SEP
-			+ AddressColumns.STREET_LINE_1 + TEXT + NOTNULL_CONSTRAINT
-			+ COMMA_SEP + AddressColumns.STREET_LINE_2 + TEXT + COMMA_SEP
+			+ AddressColumns.STREET_LINE_1 + TEXT + NOTNULL_CONSTRAINT + COMMA_SEP
+			+ AddressColumns.STREET_LINE_2 + TEXT + COMMA_SEP
 			+ AddressColumns.CITY + TEXT + UNIQUE_CONSTRAINT + COMMA_SEP
 			+ AddressColumns.STATE + TEXT + COMMA_SEP  
 			+ AddressColumns.COUNTRY+ TEXT + COMMA_SEP 
 			+ AddressColumns.POSTALCODE + TEXT + COMMA_SEP 
-			+ AddressColumns.CONTACT_ID + TEXT + COMMA_SEP +
-			FOREIGN_KEY_CONSTRAINT + "(" + AddressColumns.CONTACT_ID + ")" + " REFERENCES " + ContactsColumns.TABLE_NAME + "(" + ContactsColumns.CONTACT_ID + ")" + " )";
+			+ AddressColumns.CONTACT_ID + TEXT + COMMA_SEP 
+			+ FOREIGN_KEY_CONSTRAINT + "(" + AddressColumns.CONTACT_ID + ")" + " REFERENCES " + ContactsColumns.TABLE_NAME + "(" + ContactsColumns.CONTACT_ID + ")" + " )";
 	
 	public static final String phoneTableSQL = "CREATE TABLE "
 			+ PhoneColumns.TABLE_NAME + " ( " + PhoneColumns.PHONE_NO_ID
 			+ INTEGER + PRIMARY_KEY_CONSTRAINT + COMMA_SEP
-			+ PhoneColumns.PHONE_TYPE + TEXT + NOTNULL_CONSTRAINT
-			+ COMMA_SEP + PhoneColumns.PHONE_NO + TEXT + COMMA_SEP + 
-			PhoneColumns.CONTACT_ID + TEXT + COMMA_SEP 
+			+ PhoneColumns.PHONE_TYPE + TEXT + NOTNULL_CONSTRAINT + COMMA_SEP 
+			+ PhoneColumns.PHONE_NO + TEXT + COMMA_SEP  
+			+ PhoneColumns.CONTACT_ID + TEXT + COMMA_SEP 
 			+ FOREIGN_KEY_CONSTRAINT + "(" + PhoneColumns.CONTACT_ID + ")" + " REFERENCES " + ContactsColumns.TABLE_NAME + "(" + ContactsColumns.CONTACT_ID + ")" + " )";
 
 	
@@ -154,9 +106,8 @@ public class DBUtilities {
 			+ AccountColumns.ACCT_NO + TEXT + COMMA_SEP
 			+ AccountColumns.EXPIRY_DATE + TEXT + COMMA_SEP
 			+ AccountColumns.CVV_NO + INTEGER + COMMA_SEP
-			+ AccountColumns.PIN_NO + INTEGER + COMMA_SEP
-			+ AccountColumns.CONTACT_ID + TEXT + COMMA_SEP 
-			+ FOREIGN_KEY_CONSTRAINT + "(" + AccountColumns.CONTACT_ID + ")" + " REFERENCES " + ContactsColumns.TABLE_NAME + "(" + ContactsColumns.CONTACT_ID + ")" + " )";
+			+ AccountColumns.PIN_NO + INTEGER 
+			+ " )";
 
 	public static final String paymentReminderTableSQL = "CREATE TABLE "
 			+ PaymentReminderAccountColumns.TABLE_NAME + " ( "
@@ -164,8 +115,6 @@ public class DBUtilities {
 			+ PaymentReminderAccountColumns.BILLING_CYCLE + TEXT + COMMA_SEP 
 			+ PaymentReminderAccountColumns.PAYMENT_CYCLE + TEXT + COMMA_SEP
 			+ PaymentReminderAccountColumns.REMINDER_SCHEDULE + TEXT  + COMMA_SEP
-			+ PaymentReminderAccountColumns.CONTACT_ID + TEXT + COMMA_SEP 
 			+ PaymentReminderAccountColumns.ACCT_ID + TEXT + COMMA_SEP
-			+ FOREIGN_KEY_CONSTRAINT + "(" + PaymentReminderAccountColumns.CONTACT_ID + ")" + " REFERENCES " + ContactsColumns.TABLE_NAME + "(" + ContactsColumns.CONTACT_ID + ")" 
-			+ COMMA_SEP + FOREIGN_KEY_CONSTRAINT + "(" + PaymentReminderAccountColumns.ACCT_ID + ")" + " REFERENCES " + AccountColumns.TABLE_NAME + "(" + AccountColumns.ACCT_ID + ")" + " )" ;
+			+ FOREIGN_KEY_CONSTRAINT + "(" + PaymentReminderAccountColumns.ACCT_ID + ")" + " REFERENCES " + AccountColumns.TABLE_NAME + "(" + AccountColumns.ACCT_ID + ")" + " )" ;
 }

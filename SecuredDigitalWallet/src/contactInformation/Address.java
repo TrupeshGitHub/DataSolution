@@ -7,16 +7,6 @@ package contactInformation;
  */
 public class Address {
 
-	public Address(String streetLine1, String streetLine2, String city,
-			int state, int country, int postalode) {
-		super();
-		this.streetLine1 = streetLine1;
-		this.streetLine2 = streetLine2;
-		this.city = city;
-		this.state = state;
-		this.country = country;
-		this.postalode = postalode;
-	}
 	/**
 	 *  street line 1
 	 */
@@ -32,15 +22,16 @@ public class Address {
 	/**
 	 *  state of residence
 	 */
-	private int state;
+	private String state;
 	/**
 	 *  country of residence
 	 */
-	private int country;
+	private String country;
 	/**
 	 *  postal code of the address
 	 */
-	private int postalode;
+	private int postalCode;
+	
 	public String getStreetLine1() {
 		return streetLine1;
 	}
@@ -59,30 +50,30 @@ public class Address {
 	public void setCity(String city) {
 		this.city = city;
 	}
-	public int getState() {
+	public String getState() {
 		return state;
 	}
-	public void setState(int state) {
+	public void setState(String state) {
 		this.state = state;
 	}
-	public int getCountry() {
+	public String getCountry() {
 		return country;
 	}
-	public void setCountry(int country) {
+	public void setCountry(String country) {
 		this.country = country;
 	}
-	public int getPostalode() {
-		return postalode;
+	public int getPostalCode() {
+		return postalCode;
 	}
-	public void setPostalode(int postalode) {
-		this.postalode = postalode;
+	public void setPostalCode(int postalode) {
+		this.postalCode = postalode;
 	}
 	/**
 	 * This method will specially be used for navigation purpose as the maps APIs expect the complete address
 	 * @return completeAddress of the contact 
 	 */
 	public String getCompleteAddress(){
-		return (this.getStreetLine1()+","+this.getStreetLine2()+","+this.getCity()+","+this.getState()+","+this.getCountry()+" "+this.getPostalode());
+		return (this.getStreetLine1()+","+this.getStreetLine2()+","+this.getCity()+","+this.getState()+","+this.getCountry()+" "+this.getPostalCode());
 	}	
 	
 }

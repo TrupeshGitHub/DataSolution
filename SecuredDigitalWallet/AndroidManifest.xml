@@ -7,6 +7,8 @@
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
     <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <uses-sdk
         android:minSdkVersion="14"
@@ -14,13 +16,12 @@
 
     <application
         android:allowBackup="true"
-        android:icon="@drawable/ic_launcher"
+        android:icon="@drawable/launcher_icon"
         android:label="@string/app_name"
         android:theme="@style/AppTheme" >
-        <uses-library android:name="com.google.android.maps" />
-
+        
         <activity
-            android:name="com.example.secureddigitalwallet.MainActivity"
+            android:name="com.example.secureddigitalwallet.TabHostActivity"
             android:label="@string/app_name" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,26 +29,17 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity
-            android:name="com.i2a.datasolution.ViewPagerActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.testcoverflow.CoverFlowExample"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.secureddigitalwallet.DatabaseActivity"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="com.example.secureddigitalwallet.Navigation"
-            android:label="@string/app_name" >
-        </activity>
-        <activity
-            android:name="net.pocketmagic.android.carousel.CaraouselActivity"
-            android:label="@string/app_name" >
-        </activity>
+        <activity android:name="com.example.secureddigitalwallet.NavigateContact"/>
+        <activity android:name="com.businesscards.BusinessCardsMain" />
+        <activity android:name="com.bankingCards.BankingCardsActivity" />
+        <activity android:name="com.passwordManager.PasswordManagerActivity" />
+        <activity android:name="com.businesscards.AddBusinessCard" />
+        <activity android:name="com.businesscards.EditBusinessCard" />
+        <activity android:name="com.businesscards.ViewBusinessCard" />
+        <activity android:name="com.businesscards.DeleteBusinessCard" />
+        <activity android:name="com.bankingCards.ViewBankingcard" />
+        <uses-library android:required="true" android:name="com.google.android.maps" />
+        
     </application>
 
 </manifest>

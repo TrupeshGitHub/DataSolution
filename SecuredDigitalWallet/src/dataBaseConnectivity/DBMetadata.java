@@ -17,6 +17,7 @@ public class DBMetadata {
 		public static final String FIRST_NAME = "firstName"; // NOT NULL CONSTRAINT
 		public static final String LAST_NAME = "lastName"; //OPTIONAL
 		
+		public static final String FIRM_NAME = "firmName"; //OPTIONAL
 		public static final String CORPORATE_EMAIL = "corporateEmailID"; //UNIQUE CONSTRAINT 
 		public static final String SECONDARY_EMAIL = "secondaryEmailID"; //OPTIONAL FIELD
 		
